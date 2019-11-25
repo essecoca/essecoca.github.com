@@ -17,7 +17,7 @@
             margin: 0;
         }
         </style>
-        <title>Prises Fibre Essec</title>
+        <title>Prises Essec</title>
     </head>
     <body>
         <div id="map">
@@ -42,7 +42,7 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:17, minZoom:1
-        }).fitBounds([[2.6441166210781057,-70.92537058590376],[19.064610466546032,-42.06293066388559]]);
+        }).fitBounds([[2.644116621078105,-70.92537058590376],[19.064610466546032,-42.062930663885616]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
@@ -76,9 +76,6 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['debit_scl_TRANCHE_DEB'] !== null ? Autolinker.link(String(feature.properties['debit_scl_TRANCHE_DEB'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <td colspan="2">' + (feature.properties['Imbsite'] !== null ? Autolinker.link(String(feature.properties['Imbsite'])) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -92,8 +89,7 @@
                         <td>' + (feature.properties['Nb Log'] !== null ? Autolinker.link(String(feature.properties['Nb Log'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Débit xDSL</th>\
-                        <td>' + (feature.properties['Débit xDSL'] !== null ? Autolinker.link(String(feature.properties['Débit xDSL'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Débit xDSL'] !== null ? Autolinker.link(String(feature.properties['Débit xDSL'])) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -150,9 +146,6 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['debit_scl_TRANCHE_DEB'] !== null ? Autolinker.link(String(feature.properties['debit_scl_TRANCHE_DEB'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <td colspan="2">' + (feature.properties['imbsite'] !== null ? Autolinker.link(String(feature.properties['imbsite'])) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -166,8 +159,7 @@
                         <td>' + (feature.properties['Nb Log'] !== null ? Autolinker.link(String(feature.properties['Nb Log'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Débit xDSL</th>\
-                        <td>' + (feature.properties['Débit xDSL'] !== null ? Autolinker.link(String(feature.properties['Débit xDSL'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Débit xDSL'] !== null ? Autolinker.link(String(feature.properties['Débit xDSL'])) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -234,5 +226,4 @@
         setBounds();
         </script>
     </body>
-    
 </html>
